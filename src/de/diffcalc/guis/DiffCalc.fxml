@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.diffcalc.listener.DiffCalcController">
+   <children>
+      <HBox alignment="CENTER_RIGHT" layoutX="20.0" layoutY="20.0" prefHeight="36.0" prefWidth="600.0" style="-fx-background-color: rgba(23, 26, 30, 1);" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button fx:id="minimizeBtn" minWidth="32.0" mnemonicParsing="false" onAction="#handleMinimize" onMouseEntered="#handleMinimizeMouseEntered" onMouseExited="#handleMinimizeMouseExited" prefHeight="4030.0" prefWidth="30.0" style="-fx-background-color: rgba(0, 0, 0, 0);" text="_" textFill="WHITE">
+               <font>
+                  <Font name="Montserrat Black" size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="closeBtn" layoutX="578.0" layoutY="10.0" minWidth="32.0" mnemonicParsing="false" onAction="#handleClose" onMouseEntered="#handleCloseMouseEntered" onMouseExited="#handleCloseMouseExited" prefHeight="4030.0" prefWidth="30.0" style="-fx-background-color: rgba(0, 0, 0, 0);" text="X" textFill="WHITE">
+               <font>
+                  <Font name="Montserrat Black" size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+       <LineChart fx:id="lineGraph" createSymbols="false" layoutY="33.0" legendVisible="false" prefHeight="340.0" prefWidth="600.0" visible="false" AnchorPane.bottomAnchor="27.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="33.0">
+           <xAxis>
+               <NumberAxis autoRanging="true" lowerBound="-50" side="BOTTOM" tickUnit="1" upperBound="50" />
+           </xAxis>
+           <yAxis>
+               <NumberAxis autoRanging="true" lowerBound="-50" side="LEFT" tickUnit="1" upperBound="50" />
+           </yAxis>
+           <cursor>
+               <Cursor fx:constant="CROSSHAIR" />
+           </cursor>
+         <effect>
+            <Glow />
+         </effect>
+       </LineChart>
+      <HBox alignment="CENTER" layoutX="-15.0" layoutY="336.0" prefHeight="28.0" prefWidth="600.0" spacing="10.0" style="-fx-background-color: #888888;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <JFXTextField fx:id="functionLbl" alignment="CENTER" focusColor="#28ff69" prefHeight="25.0" prefWidth="253.0" promptText="Function" unFocusColor="#838383" />
+            <JFXTextField fx:id="rangeXLbl" alignment="CENTER" focusColor="#28ff69" layoutX="90.0" layoutY="12.0" prefHeight="25.0" prefWidth="110.0" promptText="RangeX" unFocusColor="#838383" />
+            <JFXTextField fx:id="rangeX1Lbl" alignment="CENTER" focusColor="#28ff69" layoutX="422.0" layoutY="12.0" prefHeight="25.0" prefWidth="110.0" promptText="RangeX1" unFocusColor="#838383" />
+            <JFXButton fx:id="goBtn" onAction="#handleGo" prefHeight="25.0" prefWidth="87.0" text="GO" textFill="#28ff69" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
